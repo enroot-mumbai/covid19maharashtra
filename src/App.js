@@ -9,7 +9,7 @@ import * as Icon from 'react-feather';
 
 import './App.scss';
 
-import Home from './components/home';
+import Home from './components/Screens/home';
 import Navbar from './components/navbar';
 import Links from './components/links';
 import FAQ from './components/faq';
@@ -27,12 +27,12 @@ function App() {
       displayName: 'Home',
       animationDelayForNavbar: 0.2,
     },
-    {
-      pageLink: '/demographics',
-      view: PatientDB,
-      displayName: 'Demographics',
-      animationDelayForNavbar: 0.3,
-    },
+    // {
+    //   pageLink: '/demographics',
+    //   view: PatientDB,
+    //   displayName: 'Demographics',
+    //   animationDelayForNavbar: 0.3,
+    // },
     {
       pageLink: '/deepdive',
       view: DeepDive,
@@ -60,7 +60,7 @@ function App() {
           render={({location}) => (
             <div className="Almighty-Router">
               <Navbar pages={pages} />
-              <Banner />
+              {/* <Banner /> */}
               <Route exact path="/" render={() => <Redirect to="/" />} />
               <Switch location={location}>
                 {pages.map((page, i) => {
@@ -84,18 +84,19 @@ function App() {
         {/* <img
           src="/icon.png"
           alt="https://www.covid19india.org | Coronavirus cases live dashboard"
-        />*/}
+        /> */}
 
-        <h5>We stand with everyone fighting on the frontlines</h5>
-        <div className="link">
-          <a
-            href="https://github.com/covid19india"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            covid19india
-          </a>
-        </div>
+        <h5>Developed by:</h5>
+        <a
+          href="http://enrootmumbai.in/"
+          className="button github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {/* <Icon.GitHub /> */}
+          <span>Enroot Mumbai</span>
+        </a>
+        <h5>Inspired by:</h5>
         <a
           href="https://github.com/covid19india/covid19india-react"
           className="button github"
@@ -103,35 +104,7 @@ function App() {
           rel="noopener noreferrer"
         >
           <Icon.GitHub />
-          <span>Open Sourced on GitHub</span>
-        </a>
-        <a
-          className="button excel"
-          href="https://bit.ly/patientdb"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon.Database />
-          <span>Crowdsourced Patient Database&nbsp;</span>
-        </a>
-        <a
-          href="https://twitter.com/covid19indiaorg"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="button twitter"
-          style={{justifyContent: 'center'}}
-        >
-          <Icon.Twitter />
-          <span>View updates on Twitter</span>
-        </a>
-        <a
-          href="https://bit.ly/covid19crowd"
-          className="button telegram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon.MessageCircle />
-          <span>Join Telegram to Collaborate!</span>
+          <span>Covid 19 India</span>
         </a>
       </footer>
     </div>
