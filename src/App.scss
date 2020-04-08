@@ -459,6 +459,18 @@ h6 {
   }
 }
 
+.enroot {
+  width: 15.5rem;
+  background: #fff !important;
+  color: #fff !important;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: #ecf0f1 !important;
+  }
+}
+
 .twitter {
   width: 15.5rem;
 }

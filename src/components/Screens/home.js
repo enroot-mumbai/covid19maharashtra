@@ -45,6 +45,10 @@ function Home(props) {
         axios.get('https://api.covid19india.org/state_district_wise.json'),
         axios.get('https://api.covid19india.org/updatelog/log.json'),
       ]);
+      // console.log('Statewise',response.data.statewise)
+      // const onlyMH = response.data.statewise.filter(function(state) {
+      //   return state.statecode == "MH";
+      // });
       setStates(response.data.statewise);
       setTimeseries(validateCTS(response.data.cases_time_series));
       setLastUpdated(response.data.statewise[0].lastupdatedtime);
@@ -56,6 +60,7 @@ function Home(props) {
       console.log(err);
     }
   };
+
 
   const onHighlightState = (state, index) => {
     if (!state && !index) setRegionHighlighted(null);
@@ -76,7 +81,7 @@ function Home(props) {
                 <h1>Maharashtra COVID-19 Tracker</h1>
                 <h6 style={{fontWeight: 600}}>Enroot Mumbai Volunteer Initiative</h6>
               </div>
-              <div className="last-update">
+              {/* <div className="last-update">
                 <h6>Last Updated</h6>
                 <h6 style={{color: '#28a745', fontWeight: 600}}>
                   {isNaN(Date.parse(formatDate(lastUpdated)))
@@ -91,12 +96,12 @@ function Home(props) {
                     ? ''
                     : formatDateAbsolute(lastUpdated)}
                 </h6>
-              </div>
+              </div> */}
             </div>
           </div>
 
-          {states.length > 1 && <Level data={states} />}
-          <Minigraph timeseries={timeseries} animate={true} />
+          {/* {states.length > 1 && <Level data={states} />} */}
+          {/* <Minigraph timeseries={timeseries} animate={true} /> */}
           <Table
             states={states}
             summary={false}
@@ -115,7 +120,7 @@ function Home(props) {
                 regionHighlighted={regionHighlighted}
               />
 
-              <div
+              {/* <div
                 className="timeseries-header fadeInUp"
                 style={{animationDelay: '2.5s'}}
               >
@@ -170,14 +175,14 @@ function Home(props) {
                     />
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <TimeSeries
+              {/* <TimeSeries
                 timeseries={timeseries}
                 type={graphOption}
                 mode={timeseriesMode}
                 logMode={timeseriesLogMode}
-              />
+              /> */}
             </React.Fragment>
           )}
         </div>

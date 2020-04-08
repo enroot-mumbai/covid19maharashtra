@@ -33,12 +33,12 @@ function App() {
     //   displayName: 'Demographics',
     //   animationDelayForNavbar: 0.3,
     // },
-    {
-      pageLink: '/deepdive',
-      view: DeepDive,
-      displayName: 'Deep Dive',
-      animationDelayForNavbar: 0.4,
-    },
+    // {
+    //   pageLink: '/deepdive',
+    //   view: DeepDive,
+    //   displayName: 'Deep Dive',
+    //   animationDelayForNavbar: 0.4,
+    // },
     {
       pageLink: '/links',
       view: Links,
@@ -89,12 +89,16 @@ function App() {
         <h5>Developed by:</h5>
         <a
           href="http://enrootmumbai.in/"
-          className="button github"
+          className="button enroot"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {/* <Icon.GitHub /> */}
-          <span>Enroot Mumbai</span>
+          <img
+            src="emlogo.png"
+            alt="Enroot Mumbai"
+            style={{width:'60%',height:'60%'}}
+          />
+          {/* <span>Enroot Mumbai</span> */}
         </a>
         <h5>Inspired by:</h5>
         <a

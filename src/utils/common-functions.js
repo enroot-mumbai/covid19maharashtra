@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 const months = {
   '01': 'Jan',
   '02': 'Feb',
@@ -44,7 +46,7 @@ const stateCodes = {
   WB: 'West Bengal',
   AN: 'Andaman and Nicobar Islands',
   CH: 'Chandigarh',
-  DB: 'Dadra and Nagar Haveli',
+  DN: 'Dadra and Nagar Haveli',
   DD: 'Daman and Diu',
   DL: 'Delhi',
   JK: 'Jammu and Kashmir',
@@ -90,4 +92,30 @@ export const validateCTS = (data = []) => {
       const year = today.getFullYear();
       return new Date(d.date + year) < today;
     });
+};
+
+export const parseStateTimeseries = ({states_daily: data}) => {
+  const statewiseSeries = Object.keys(stateCodes).reduce((a, c) => {
+    a[c] = [];
+    return a;
+  }, {});
+
+  for (let i = 0; i < data.length; i += 3) {
+    const date = moment(data[i].date, 'DD-MMM-YY');
+    Object.entries(statewiseSeries).forEach(([k, v]) => {
+      const stateCode = k.toLowerCase();
+      const prev = v[v.length - 1] || {};
+      v.push({
+        dailyconfirmed: +data[i][stateCode] || 0,
+        dailyrecovered: +data[i + 1][stateCode] || 0,
+        dailydeceased: +data[i + 2][stateCode] || 0,
+        date: date.format('DD MMMM '),
+        totalconfirmed: +data[i][stateCode] + prev.dailyconfirmed || 0,
+        totaldeceased: +data[i + 1][stateCode] + prev.dailyrecovered || 0,
+        totalrecovered: +data[i + 2][stateCode] + prev.dailydeceased || 0,
+      });
+    });
+  }
+
+  return statewiseSeries;
 };

@@ -5,6 +5,8 @@ import Row from './row';
 
 function Table(props) {
   const [states, setStates] = useState(props.states);
+
+  const [maharashtra,setMaharashtra] = useState(props.states)
   const [revealedStates, setRevealedStates] = useState({});
   const [districts, setDistricts] = useState({});
   const [count, setCount] = useState(0);
@@ -17,34 +19,49 @@ function Table(props) {
       : false,
   });
 
+  // useEffect(() => {
+  //   if (props.summary === true) {
+  //     setStates(props.states.filter(state => {
+  //       if(state)return state.statecode == 'MH'
+  //     }));
+  //   } 
+  // }, [props.states]);
+
   useEffect(() => {
     if (props.summary === true) {
       setStates(props.states.slice(0, 9));
+      const onlyMaharashtra = props.states.filter(state => {
+        return state && state.statecode == 'MH'
+      })
+      setMaharashtra(onlyMaharashtra)
     } else {
       setStates(props.states);
+      const onlyMaharashtra = props.states.filter(state => {
+        return state && state.statecode == 'MH'
+      })
+      setMaharashtra(onlyMaharashtra)
     }
   }, [props.states, props.summary]);
 
   useEffect(() => {
     if (props.states[0]) {
       setRevealedStates(
-        props.states.reduce((a, state) => {
-          return {...a, [state.state]: false};
-        }, {})
+        {Maharashtra: true}
       );
     }
   }, [props.states]);
 
-  useEffect(() => {
-    if (states.length > 0) {
-      // slice to ignore the first item which is the total count
-      setCount(states.slice(1).filter((s) => s && s.confirmed > 0).length);
-    }
-  }, [states]);
+  // useEffect(() => {
+  //   if (states.length > 0) {
+  //     // slice to ignore the first item which is the total count
+  //     setCount(states.slice(1).filter((s) => s && s.confirmed > 0).length);
+  //   }
+  // }, [states]);
 
   useEffect(() => {
     setDistricts(props.stateDistrictWiseData);
   }, [props.stateDistrictWiseData]);
+
 
   const doSort = (e, props) => {
     const totalRow = states.splice(0, 1);
@@ -114,7 +131,7 @@ function Table(props) {
               onClick={(e) => handleSort(e, props)}
             >
               <div className="heading-content">
-                <abbr title="State">State/UT</abbr>
+                <abbr title="State">Maharashtra</abbr>
                 <div
                   style={{
                     display:
@@ -243,7 +260,7 @@ function Table(props) {
 
         <tbody>
           {states.map((state, index) => {
-            if (index !== 0 && state.confirmed > 0) {
+            if (index !== 0 && state.confirmed > 0 && state.statecode === 'MH') {
               return (
                 <Row
                   key={index}
@@ -266,15 +283,15 @@ function Table(props) {
           })}
         </tbody>
 
-        <tbody>
+        {/* <tbody>
           {states.length > 1 && props.summary === false && (
-            <Row key={0} state={states[0]} total={true} />
+            <Row key={0} state={states[1]} total={true} />
           )}
-        </tbody>
+        </tbody> */}
       </table>
-      <h5 className="table-fineprint fadeInUp" style={{animationDelay: '1s'}}>
+      {/* <h5 className="table-fineprint fadeInUp" style={{animationDelay: '1s'}}>
         {count} States/UTS Affected
-      </h5>
+      </h5> */}
     </React.Fragment>
   );
 }

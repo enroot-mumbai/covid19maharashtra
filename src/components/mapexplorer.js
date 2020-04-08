@@ -96,7 +96,7 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
     }
     const isState = !('district' in regionHighlighted);
     if (isState) {
-      const newMap = mapMeta['India'];
+      const newMap = mapMeta['Maharashtra'];
       setCurrentMap(newMap);
       const region = getRegionFromState(regionHighlighted.state);
       setCurrentHoveredRegion(region);
@@ -141,9 +141,7 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
         return;
       }
       setCurrentMap(newMap);
-      if (newMap.mapType === MAP_TYPES.COUNTRY) {
-        setHoveredRegion(states[1].state, newMap);
-      } else if (newMap.mapType === MAP_TYPES.STATE) {
+       if (newMap.mapType === MAP_TYPES.STATE) {
         const districtData = (stateDistrictWiseData[name] || {districtData: {}})
           .districtData;
         const topDistrict = Object.keys(districtData)
@@ -222,7 +220,7 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
                 : 'state-last-update'
             }`}
           >
-            {/* <h6>Last Updated</h6>
+            <h6>Last Updated</h6>
             <h3
               title={
                 isNaN(Date.parse(formatDate(lastupdatedtime)))
@@ -236,7 +234,7 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
                     new Date(formatDate(lastupdatedtime)),
                     new Date()
                   ) + ' Ago'}
-            </h3> */}
+            </h3>
           </div>
         )}
 
@@ -247,14 +245,14 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
           </h4>
         ) : null}
 
-        {currentMap.mapType === MAP_TYPES.STATE ? (
+        {/* {currentMap.mapType === MAP_TYPES.STATE ? (
           <div
             className="button back-button"
             onClick={() => switchMapToState('India')}
           >
             Back
           </div>
-        ) : null}
+        ) : null} */}
       </div>
 
       <ChoroplethMap

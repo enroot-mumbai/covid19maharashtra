@@ -93,7 +93,7 @@ function Row(props) {
       >
         <td style={{fontWeight: 600}}>
           <div className="table__title-wrapper">
-            <span
+            {/* <span
               className={`dropdown ${
                 props.reveal ? 'rotateRightDown' : 'rotateDownRight'
               }`}
@@ -103,13 +103,15 @@ function Row(props) {
               }}
             >
               <Icon.ChevronDown />
-            </span>
-            {state.state}
+            </span> */}
+            {/* {state.state}
             {state.state === 'West Bengal' && (
               <Link to="/faq">
                 <Icon.HelpCircle className="height-22" />
               </Link>
-            )}
+            )} */}
+
+            Total
           </div>
         </td>
         <td>
