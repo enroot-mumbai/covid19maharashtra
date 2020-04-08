@@ -2,26 +2,35 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function FAQ(props) {
-  const [faq, setFaq] = useState([]);
+  // const [faq, setFaq] = useState([]);
 
-  useEffect(() => {
-    getFAQs();
-  }, []);
+  // useEffect(() => {
+  //   getFAQs();
+  // }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const getFAQs = () => {
-    axios
-      .get('https://api.covid19india.org/website_data.json')
-      .then((response) => {
-        setFaq(response.data['faq']);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+
+  const faq = [
+    {id:1,question:'Are you official ?',answer:'No we are volunteer team, this project is just to share some visualizations of the data'},
+    {id:2,question:'Who is your inspiration ?',answer:'Our inspiration is Covid19India team'},
+    {id:3,question:'Where are you getting patient data from ?',answer:'We are getting data from Covid19India api - We are using state bulletins and official handles to update our numbers. The data is validated by a group of volunteers and published into a Google sheet and an API. API is available for all at api.covid19india.org. We would love it if you can use this data in the fight against this virus. The source <a href=\"https://telegra.ph/Covid-19-Sources-03-19\">list is here.</a>\n\n'},
+    {id:4,question:'Who are you ? ', answer:'We are a group of volunteers from <a href=\"http://enrootmumbai.in/">Enroot Mumbai team.</a>'}
+  ]
+
+
+  // const getFAQs = () => {
+  //   axios
+  //     .get('https://api.covid19india.org/website_data.json')
+  //     .then((response) => {
+  //       setFaq(response.data['faq']);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   return (
     <div className="FAQ">
@@ -40,6 +49,7 @@ function FAQ(props) {
           </div>
         );
       })}
+      
     </div>
   );
 }

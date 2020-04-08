@@ -68,6 +68,10 @@ function Links(props) {
           https://coronavirus.thebaselab.com/
         </a>
       </div>
+
+      <div className="link fadeInUp" style={{animationDelay: '0.7s'}}>
+        <p>We are soon adding Maharashtra specific resources, please contact - enrootmumbai@gmail.com</p>
+      </div>
     </div>
   );
 }
