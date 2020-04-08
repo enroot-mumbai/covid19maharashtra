@@ -102,12 +102,12 @@ function App() {
         </a>
         <h5>Inspired by:</h5>
         <a
-          href="https://github.com/covid19india/covid19india-react"
+          href="https://www.covid19india.org/"
           className="button github"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Icon.GitHub />
+          {/* <Icon.GitHub /> */}
           <span>Covid 19 India</span>
         </a>
       </footer>
