@@ -74,9 +74,9 @@ function Home(props) {
             <div className="header-mid">
               <div className="titles">
                 <h1>Maharashtra COVID-19 Tracker</h1>
-                <h6 style={{fontWeight: 600}}>Medical Education and Drugs Department Initiative</h6>
+                <h6 style={{fontWeight: 600}}>Enroot Mumbai Volunteer Initiative</h6>
               </div>
-              {/* <div className="last-update">
+              <div className="last-update">
                 <h6>Last Updated</h6>
                 <h6 style={{color: '#28a745', fontWeight: 600}}>
                   {isNaN(Date.parse(formatDate(lastUpdated)))
@@ -91,7 +91,7 @@ function Home(props) {
                     ? ''
                     : formatDateAbsolute(lastUpdated)}
                 </h6>
-              </div> */}
+              </div>
             </div>
           </div>
 
