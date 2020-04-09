@@ -115,12 +115,12 @@ function App() {
 
         <h5>Join the volunteers:</h5>
         <a
-          href="https://chat.whatsapp.com/LUE5qRKSkm7ERVZqrbokV7"
+          href="https://join.slack.com/t/enroot-mumbai/shared_invite/zt-ditoxlox-uL3koEpm3iXFGZhnTFlQGQ"
           className="button github"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>WhatsApp Group</span>
+          <span>Slack Channel</span>
         </a>
       </footer>
     </div>
