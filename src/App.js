@@ -18,6 +18,7 @@ import FAQ from './components/faq';
 import Banner from './components/banner';
 import PatientDB from './components/patientdb';
 import DeepDive from './components/deepdive';
+import Volunteers from './components/Screens/Volunteers';
 
 const history = require('history').createBrowserHistory;
 
@@ -53,6 +54,12 @@ function App() {
       displayName: 'About',
       animationDelayForNavbar: 0.5,
     },
+    {
+      pageLink: '/volunteers',
+      view: Volunteers,
+      displayName: 'Volunteers',
+      animationDelayForNavbar: 0.5,
+    }
   ];
 
   return (
