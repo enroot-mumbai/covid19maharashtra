@@ -86,7 +86,7 @@ function App() {
           alt="https://www.covid19india.org | Coronavirus cases live dashboard"
         /> */}
 
-        <h5>Developed by:</h5>
+        <h5>Powered by:</h5>
         <a
           href="http://enrootmumbai.in/"
           className="button enroot"
@@ -109,6 +109,16 @@ function App() {
         >
           {/* <Icon.GitHub /> */}
           <span>Covid 19 India</span>
+        </a>
+
+        <h5>Join the volunteers:</h5>
+        <a
+          href="https://chat.whatsapp.com/LUE5qRKSkm7ERVZqrbokV7"
+          className="button github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>WhatsApp Group</span>
         </a>
       </footer>
     </div>
