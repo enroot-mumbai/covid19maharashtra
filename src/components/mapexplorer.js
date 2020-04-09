@@ -19,7 +19,13 @@ export default function ({states, stateDistrictWiseData, regionHighlighted}) {
   const [currentMap, setCurrentMap] = useState(mapMeta.Maharashtra);
 
   useEffect(() => {
-    const region = getRegionFromState(states[1]);
+    console.log('States in Map',states)
+    const onlyMH = states.filter(state => {
+      return state.statecode === 'MH'
+    })
+    const region = getRegionFromState(onlyMH[0]);
+
+    console.log(region)
     setCurrentHoveredRegion(region);
   }, [states]);
 
