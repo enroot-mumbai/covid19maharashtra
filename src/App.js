@@ -10,6 +10,8 @@ import * as Icon from 'react-feather';
 import './App.scss';
 
 import Home from './components/Screens/home';
+import Services from './components/Screens/Services';
+
 import Navbar from './components/navbar';
 import Links from './components/links';
 import FAQ from './components/faq';
@@ -33,12 +35,12 @@ function App() {
     //   displayName: 'Demographics',
     //   animationDelayForNavbar: 0.3,
     // },
-    // {
-    //   pageLink: '/deepdive',
-    //   view: DeepDive,
-    //   displayName: 'Deep Dive',
-    //   animationDelayForNavbar: 0.4,
-    // },
+    {
+      pageLink: '/services',
+      view: Services,
+      displayName: 'Services',
+      animationDelayForNavbar: 0.4,
+    },
     {
       pageLink: '/links',
       view: Links,

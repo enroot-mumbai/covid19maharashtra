@@ -172,49 +172,49 @@ body {
 }
 
 h1 {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 24px !important;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 h2 {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px !important;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 h3 {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px !important;
   font-weight: 400;
   text-transform: uppercase;
 }
 
 h4 {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 13px !important;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 h5 {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 12px !important;
   font-weight: 900;
   text-transform: uppercase;
 }
 
 h6 {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 11px !important;
   font-weight: 600;
   text-transform: uppercase;
 }
 
 p {
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px !important;
   font-weight: 400;
 }
@@ -264,7 +264,7 @@ p {
   flex-direction: row;
   justify-content: center;
   line-height: 20px;
-  font-family: 'Archia';
+  font-family: 'Open Sans', sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   color: $purple;
@@ -298,7 +298,7 @@ p {
     a {
       display: inline-block;
       font-size: 14px;
-      font-family: 'Archia';
+      font-family: 'Open Sans', sans-serif;
       text-decoration: none;
       margin-right: 2rem;
       color: $gray-mid;
@@ -393,7 +393,7 @@ p {
   flex-direction: row;
   padding: 0.5rem;
   border: 0;
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   background: $blue-light;
   color: $blue-mid;
@@ -601,7 +601,7 @@ table {
   position: relative;
   width: 30rem;
   align-self: center;
-  font-family: 'archia';
+  font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
   border-spacing: 3px 4px;
   border-collapse: separate;
@@ -873,7 +873,7 @@ table {
       text {
         text-transform: uppercase;
         text-align: right;
-        font-family: 'archia';
+        font-family: 'Open Sans', sans-serif;
         font-weight: 600;
         fill: $gray;
         font-size: 10px;
@@ -1070,7 +1070,7 @@ table {
     color: $gray;
     margin-top: 1rem;
     label {
-      font-family: 'archia';
+      font-family: 'Open Sans', sans-serif;
       text-transform: uppercase;
       font-size: 0.75rem;
       font-weight: 900;
@@ -1245,7 +1245,7 @@ input.switch:checked::after {
       }
 
       text {
-        font-family: 'archia';
+        font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
         color: $cherry-mid;
         stroke: transparent;
@@ -1324,7 +1324,7 @@ input.switch:checked::after {
   align-self: center;
 
   a {
-    font-family: 'archia';
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     word-wrap: break-word;
     font-weight: 900;
@@ -1490,7 +1490,7 @@ footer {
 
   .reminder {
     align-self: center !important;
-    font-family: 'archia';
+    font-family: 'Open Sans', sans-serif;
     color: $pblue;
     font-size: 0.9rem;
     margin-bottom: 3rem;
@@ -1921,7 +1921,7 @@ footer {
   margin-top: 7rem;
   align-self: center;
     code {
-      font-family: 'archia';
+      font-family: 'Open Sans', sans-serif;
       color: $orange-mid;
     }
 
@@ -2160,7 +2160,7 @@ select {
   padding: 1rem;
   background: #fff !important;
   z-index: 101;
-  font-family: archia;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -2181,7 +2181,7 @@ select {
 .legend {
   background: #fff;
   z-index: 101;
-  font-family: archia;
+  font-family: 'Open Sans', sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -2376,7 +2376,7 @@ select {
           align-items: center;
           justify-content: flex-start;
           .chart-title {
-            font-family: 'archia';
+            font-family: 'Open Sans', sans-serif;
             font-size: 1.5rem !important;
             color: #6c757d;
             font-weight: 900;
@@ -2601,7 +2601,7 @@ select {
       background: $white;
       border-right: 1px solid $gray-light;
       a {
-        font-family: 'archia';
+        font-family: 'Open Sans', sans-serif;
         text-decoration: none;
         color: $gray;
         margin-bottom: 1rem;
@@ -2704,4 +2704,36 @@ select {
 
 .height-22 {
 	height: 22px;
+}
+
+
+.servicesDiv {
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  width:100vw;
+  margin-top:3rem
+}
+
+.underConstructionImage {
+  width:40vw;
+  align-self:center
+}
+
+.underConstructionTitle{
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.underConstructionPara {
+  text-transform: none!important;
+  font-weight: bold;
+  color:$blue;
+}
+
+@media (max-width: 769px) {
+  .underConstructionImage {
+    width:80vw;
+  }
 }
