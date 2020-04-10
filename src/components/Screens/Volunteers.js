@@ -38,12 +38,24 @@ export default function Services() {
             title:'Domestic Violence & Child Abuse',
             link:'https://airtable.com/shrWIakCbuAJCUzMJ',
             image:'images/violence.svg'
+        },
+        {
+            id:7,
+            title:'Delivery of Essential Services',
+            link:'https://airtable.com/shrrnhVq2AXQaJhBV',
+            image:'images/delivery.svg'
+        },
+        {
+            id:8,
+            title:'Fund Raising',
+            link:'https://airtable.com/shr0zfRZQn2pF9FmJ',
+            image:'images/donation.svg'
         }
     ]
 
     return (
         <div className="volunteersContainer">
-            <h1>We need help in collecting information of Govt. services, NGOs, companies, or any individual who is providing a service. We need data from all the districts, so please forward this to your friends and relatives.</h1>
+            <h1>We need help in collecting information of Govt. services, NGOs, companies, or any individual who is providing a service during the lockdown.</h1>
             <div className="serviceFormDiv">
                {forms.map(form => {
                    return(

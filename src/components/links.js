@@ -2,15 +2,41 @@ import React from 'react';
 
 function Links(props) {
   return (
-    <div className="Links">
+ <div className="Links">
+
       <div className="link fadeInUp" style={{animationDelay: '0.2s'}}>
-        <h3>HELPLINE NUMBERS [by State]</h3>
+        <h3>HELPLINE NUMBER - Maharashtra</h3>
         <a
-          href="https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf"
+          href="tel:020-26127394"
           target="_blank"
           rel="noopener noreferrer"
         >
-          https://www.mohfw.gov.in/pdf/coronvavirushelplinenumber.pdf
+          020-26127394
+        </a>
+      </div>
+
+      <div className="link fadeInUp" style={{animationDelay: '0.3s'}}>
+        <h3>Self Assesment Tool by Maharashtra Government</h3>
+        <a
+          href="https://covid-19.maharashtra.gov.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://covid-19.maharashtra.gov.in/
+        </a>
+      </div>
+
+     
+
+
+      <div className="link fadeInUp" style={{animationDelay: '0.3s'}}>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.mahakavach&hl=en_IN"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{textTransform:'none'}}
+        >
+          Mahakavach App by Maharashtra State Innovation Society
         </a>
       </div>
 
@@ -24,6 +50,8 @@ function Links(props) {
           https://www.mohfw.gov.in/
         </a>
       </div>
+
+      
 
       <div className="link fadeInUp" style={{animationDelay: '0.4s'}}>
         <h3>WHO : COVID-19 Home Page</h3>
@@ -69,9 +97,9 @@ function Links(props) {
         </a>
       </div>
 
-      <div className="link fadeInUp" style={{animationDelay: '0.7s'}}>
+      {/* <div className="link fadeInUp" style={{animationDelay: '0.7s'}}>
         <p>We are soon adding Maharashtra specific resources, please contact - enrootmumbai@gmail.com</p>
-      </div>
+      </div> */}
     </div>
   );
 }

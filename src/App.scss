@@ -1325,7 +1325,6 @@ input.switch:checked::after {
 
   a {
     font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
     word-wrap: break-word;
     font-weight: 900;
     text-decoration: none;
@@ -2753,6 +2752,7 @@ select {
     text-align: center;
     margin-bottom: 4rem;
     font-size: 1.5em!important;
+    font-weight:600;
   }
 }
 
@@ -2770,14 +2770,17 @@ select {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 24vw;
+    width: 20vw;
     flex-direction: column;
     margin: 1rem;
-
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 2px 2px 10px #ddd;
     h2{
       text-transform: none!important;
-      color: $gray-dark;
+      color: $blue;
       text-align: center;
+      margin-top: 22px;
     }
 
     img{
