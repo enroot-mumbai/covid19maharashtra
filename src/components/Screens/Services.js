@@ -183,9 +183,10 @@ export default function Services() {
             </div>: <h2>Please Select a District</h2>}
 
             {selectedService && selectedDistrict && singleServiceArray ? (
-                <h1 className='servicesDivH1'>{selectedService} in {selectedDistrict.value}</h1>
+                <h1 ref={serviceTableRef} className='servicesDivH1'>{selectedService} in {selectedDistrict.value}</h1>
             ) : null }
-            <div className='serviceDiv' ref={serviceTableRef}>
+           
+            <div className='serviceDiv' >
          
             {selectedService && singleServiceArray ? singleServiceArray.map(service => {
                 return(
