@@ -188,7 +188,7 @@ export default function Services() {
            
             <div className='serviceDiv' >
          
-            {selectedService && singleServiceArray ? singleServiceArray.map(service => {
+            {selectedDistrict && selectedService && singleServiceArray ? singleServiceArray.map(service => {
                 return(
                     <div className='serviceContainer'>
                         <h2>{service.Name}</h2>
