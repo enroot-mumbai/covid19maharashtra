@@ -40,7 +40,7 @@
     {"label": "Yavatmal", "value": "Yavatmal"},
     {"label": "Not specific to district", "value": "Not specific to district"}
   ],
-  "hi": [
+  "hi-IN": [
     {"label": "अकोला", "value": "अकोला"},
     {"label": "अमरावती", "value": "अमरावती"},
     {"label": "Buldana", "value": "Buldana"},
@@ -81,7 +81,7 @@
     {"label": "Yavatmal", "value": "Yavatmal"},
     {"label": "जिले के लिए विशिष्ट नहीं", "value": "जिले के लिए विशिष्ट नहीं"}
   ],
-  "mr": [
+  "mr-IN": [
     {"label": "अकोला", "value": "अकोला"},
     {"label": "अमरावती", "value": "अमरावती"},
     {"label": "Buldana", "value": "Buldana"},
