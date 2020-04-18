@@ -1,4 +1,5 @@
 import moment from 'moment';
+import {useLocation} from 'react-router-dom';
 
 const months = {
   '01': 'Jan',
@@ -119,3 +120,9 @@ export const parseStateTimeseries = ({states_daily: data}) => {
 
   return statewiseSeries;
 };
+
+// A custom hook that builds on useLocation to parse
+// the query string for you.
+export function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}

@@ -10,12 +10,15 @@ import * as Icon from 'react-feather';
 import './App.scss';
 
 import Home from './components/Screens/home';
+import Services from './components/Screens/Services';
+
 import Navbar from './components/navbar';
 import Links from './components/links';
 import FAQ from './components/faq';
 import Banner from './components/banner';
 import PatientDB from './components/patientdb';
 import DeepDive from './components/deepdive';
+import Volunteers from './components/Screens/Volunteers';
 
 const history = require('history').createBrowserHistory;
 
@@ -33,12 +36,12 @@ function App() {
     //   displayName: 'Demographics',
     //   animationDelayForNavbar: 0.3,
     // },
-    // {
-    //   pageLink: '/deepdive',
-    //   view: DeepDive,
-    //   displayName: 'Deep Dive',
-    //   animationDelayForNavbar: 0.4,
-    // },
+    {
+      pageLink: '/services',
+      view: Services,
+      displayName: 'Services',
+      animationDelayForNavbar: 0.4,
+    },
     {
       pageLink: '/links',
       view: Links,
@@ -51,6 +54,12 @@ function App() {
       displayName: 'About',
       animationDelayForNavbar: 0.5,
     },
+    {
+      pageLink: '/volunteers',
+      view: Volunteers,
+      displayName: 'Volunteers',
+      animationDelayForNavbar: 0.5,
+    }
   ];
 
   return (
@@ -86,7 +95,7 @@ function App() {
           alt="https://www.covid19india.org | Coronavirus cases live dashboard"
         /> */}
 
-        <h5>Developed by:</h5>
+        <h5>Powered by:</h5>
         <a
           href="http://enrootmumbai.in/"
           className="button enroot"
@@ -109,6 +118,24 @@ function App() {
         >
           {/* <Icon.GitHub /> */}
           <span>Covid 19 India</span>
+        </a>
+
+        <h5>Join the volunteers:</h5>
+        <a
+          href="https://chat.whatsapp.com/LUE5qRKSkm7ERVZqrbokV7"
+          className="button github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>WhatsApp Group</span>
+        </a>
+        <a
+          href="https://join.slack.com/t/enroot-mumbai/shared_invite/zt-ditoxlox-uL3koEpm3iXFGZhnTFlQGQ"
+          className="button github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Slack Channel</span>
         </a>
       </footer>
     </div>

@@ -231,12 +231,12 @@ function Row(props) {
           </div>
         </td>
       </tr>
-
+      {console.log('Sorted Districts',sortedDistricts)}
       {sortedDistricts &&
         Object.keys(sortedDistricts)
           .filter((district) => district.toLowerCase() !== 'unknown')
           .map((district, index) => {
-            if (district.toLowerCase() !== 'unknown') {
+            if (district.toLowerCase() !== 'unknown' && district.toLowerCase() !== 'gujarat*') {
               return (
                 <tr
                   key={index}

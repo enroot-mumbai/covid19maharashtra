@@ -127,7 +127,7 @@ function Table(props) {
         <thead>
           <tr>
             <th
-              className="sticky state-heading"
+              className="state-heading"
               onClick={(e) => handleSort(e, props)}
             >
               <div className="heading-content">
@@ -146,7 +146,7 @@ function Table(props) {
                 </div>
               </div>
             </th>
-            <th className="sticky" onClick={(e) => handleSort(e, props)}>
+            <th className="" onClick={(e) => handleSort(e, props)}>
               <div className="heading-content">
                 <abbr
                   className={`${window.innerWidth <= 769 ? 'is-cherry' : ''}`}
@@ -172,7 +172,7 @@ function Table(props) {
                 </div>
               </div>
             </th>
-            <th className="sticky" onClick={(e) => handleSort(e, props)}>
+            <th className="" onClick={(e) => handleSort(e, props)}>
               <div className="heading-content">
                 <abbr
                   className={`${window.innerWidth <= 769 ? 'is-blue' : ''}`}
@@ -198,7 +198,7 @@ function Table(props) {
                 </div>
               </div>
             </th>
-            <th className="sticky" onClick={(e) => handleSort(e, props)}>
+            <th className="" onClick={(e) => handleSort(e, props)}>
               <div className="heading-content">
                 <abbr
                   className={`${window.innerWidth <= 769 ? 'is-green' : ''}`}
@@ -229,7 +229,7 @@ function Table(props) {
                 </div>
               </div>
             </th>
-            <th className="sticky" onClick={(e) => handleSort(e, props)}>
+            <th className="" onClick={(e) => handleSort(e, props)}>
               <div className="heading-content">
                 <abbr
                   className={`${window.innerWidth <= 769 ? 'is-gray' : ''}`}
