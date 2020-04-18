@@ -9,15 +9,17 @@ const scrollToRef = (ref) =>
 
 export default function Services() {
   let tableName;
-  const language = useQuery().get('lang');
-  if (language === 'mr') {
+
+  const deviceLang = navigator.language;
+  if (deviceLang === 'mr-IN') {
     tableName = 'Final Data of Services Marathi';
-  } else if (language === 'hi') {
+  } else if (deviceLang === 'hi-IN') {
     tableName = 'Final Data of Services Hindi';
   } else {
     tableName = 'Final Data of Services English';
   }
 
+  console.log('Device lang - --- ', deviceLang)
   const [servicesArray, setServices] = React.useState([]);
 
   const [filteredServices, setFilteredServices] = React.useState([]);
@@ -39,7 +41,6 @@ export default function Services() {
       })
       .eachPage(
         function page(records, fetchNextPage) {
-          console.log('Records', records);
           records.map((record) =>
             setServices((servicesArray) => [...servicesArray, record.fields])
           );
@@ -57,9 +58,11 @@ export default function Services() {
     // };
   }, []);
 
-  const districtNamesList = language
-    ? districtNames[`${language}`]
+  const districtNamesList = deviceLang === 'hi-IN' || deviceLang === 'mr-IN' 
+    ? districtNames[`${deviceLang}`]
     : districtNames.en;
+
+  console.log(districtNamesList)
 
   const servicesToShow = [
     {
