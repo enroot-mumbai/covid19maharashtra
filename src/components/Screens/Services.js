@@ -11,7 +11,9 @@ const scrollToRef = (ref) =>
 export default function Services() {
   let tableName;
 
-  const deviceLang = navigator.language;
+  let deviceLang = window.localStorage.getItem('language');
+  // Parse stored json or if none return initialValue
+  deviceLang = deviceLang ? JSON.parse(deviceLang) : navigator.language;
 
 
   const [servicesArray, setServices] = React.useState([]);
