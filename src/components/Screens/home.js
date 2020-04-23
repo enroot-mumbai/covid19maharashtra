@@ -14,7 +14,7 @@ import Level from './../level';
 import MapExplorer from './../mapexplorer';
 import TimeSeries from './../timeseries';
 import Minigraph from './../minigraph';
-
+import {selectedLanguage} from './../../utils/setLanguage'
 function Home(props) {
   const [states, setStates] = useState([]);
   const [stateDistrictWiseData, setStateDistrictWiseData] = useState({});
@@ -28,6 +28,7 @@ function Home(props) {
   const [timeseriesLogMode, setTimeseriesLogMode] = useState(false);
   const [regionHighlighted, setRegionHighlighted] = useState(undefined);
 
+  console.log('Time Series',timeseries)
   useEffect(() => {
     if (fetched === false) {
       getStates();
@@ -78,8 +79,8 @@ function Home(props) {
           <div className="header fadeInUp" style={{animationDelay: '1s'}}>
             <div className="header-mid">
               <div className="titles">
-                <h1>Maharashtra COVID-19 Tracker</h1>
-                <h6 style={{fontWeight: 600}}>Enroot Mumbai Volunteer Initiative</h6>
+  <h1>{selectedLanguage.mhTracker}</h1>
+                <h6 style={{fontWeight: 600}}> {selectedLanguage.emInitiative} </h6>
               </div>
               {/* <div className="last-update">
                 <h6>Last Updated</h6>
@@ -120,11 +121,11 @@ function Home(props) {
                 regionHighlighted={regionHighlighted}
               />
 
-              {/* <div
+              <div
                 className="timeseries-header fadeInUp"
                 style={{animationDelay: '2.5s'}}
               >
-                <h1>Spread Trends</h1>
+                <h1>INDIA - Spread Trends</h1>
                 <div className="tabs">
                   <div
                     className={`tab ${graphOption === 1 ? 'focused' : ''}`}
@@ -175,14 +176,14 @@ function Home(props) {
                     />
                   </div>
                 </div>
-              </div> */}
+              </div>
 
-              {/* <TimeSeries
+              <TimeSeries
                 timeseries={timeseries}
                 type={graphOption}
                 mode={timeseriesMode}
                 logMode={timeseriesLogMode}
-              /> */}
+              />
             </React.Fragment>
           )}
         </div>

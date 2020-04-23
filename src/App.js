@@ -20,14 +20,17 @@ import PatientDB from './components/patientdb';
 import DeepDive from './components/deepdive';
 import Volunteers from './components/Screens/Volunteers';
 
+import {selectedLanguage} from './utils/setLanguage'
+
 const history = require('history').createBrowserHistory;
 
+console.log('Selected Language',selectedLanguage)
 function App() {
   const pages = [
     {
       pageLink: '/',
       view: Home,
-      displayName: 'Home',
+      displayName: selectedLanguage.home,
       animationDelayForNavbar: 0.2,
     },
     // {
@@ -39,25 +42,25 @@ function App() {
     {
       pageLink: '/services',
       view: Services,
-      displayName: 'Services',
+      displayName: selectedLanguage.services,
       animationDelayForNavbar: 0.4,
     },
     {
       pageLink: '/links',
       view: Links,
-      displayName: 'Helpful Links',
+      displayName: selectedLanguage.helpfulLinks,
       animationDelayForNavbar: 0.4,
     },
     {
       pageLink: '/faq',
       view: FAQ,
-      displayName: 'About',
+      displayName: selectedLanguage.about,
       animationDelayForNavbar: 0.5,
     },
     {
       pageLink: '/volunteers',
       view: Volunteers,
-      displayName: 'Volunteers',
+      displayName: selectedLanguage.volunteers,
       animationDelayForNavbar: 0.5,
     }
   ];
@@ -95,7 +98,7 @@ function App() {
           alt="https://www.covid19india.org | Coronavirus cases live dashboard"
         /> */}
 
-        <h5>Powered by:</h5>
+        <h5>{selectedLanguage.poweredBy}</h5>
         <a
           href="http://enrootmumbai.in/"
           className="button enroot"
@@ -109,7 +112,7 @@ function App() {
           />
           {/* <span>Enroot Mumbai</span> */}
         </a>
-        <h5>Inspired by:</h5>
+        <h5>{selectedLanguage.inspiredBy}:</h5>
         <a
           href="https://www.covid19india.org/"
           className="button github"
@@ -120,14 +123,14 @@ function App() {
           <span>Covid 19 India</span>
         </a>
 
-        <h5>Join the volunteers:</h5>
+        <h5>{selectedLanguage.join}:</h5>
         <a
           href="https://chat.whatsapp.com/LUE5qRKSkm7ERVZqrbokV7"
           className="button github"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>WhatsApp Group</span>
+          <span>{selectedLanguage.whatsappGroup}</span>
         </a>
         <a
           href="https://join.slack.com/t/enroot-mumbai/shared_invite/zt-ditoxlox-uL3koEpm3iXFGZhnTFlQGQ"
@@ -135,7 +138,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Slack Channel</span>
+          <span>{selectedLanguage.slackChannel}</span>
         </a>
       </footer>
     </div>

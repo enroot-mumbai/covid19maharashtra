@@ -4,6 +4,7 @@ import Select from 'react-select';
 import Airtable from 'airtable';
 import {useQuery} from '../../utils/common-functions';
 import districtNames from '../../utils/district-lang.json';
+import { selectedLanguage } from '../../utils/setLanguage';
 const scrollToRef = (ref) =>
   window.scrollTo({left: 0, top: ref.current?.offsetTop, behavior: 'smooth'});
 
@@ -11,15 +12,8 @@ export default function Services() {
   let tableName;
 
   const deviceLang = navigator.language;
-  if (deviceLang === 'mr-IN') {
-    tableName = 'Final Data of Services Marathi';
-  } else if (deviceLang === 'hi-IN') {
-    tableName = 'Final Data of Services Hindi';
-  } else {
-    tableName = 'Final Data of Services English';
-  }
 
-  console.log('Device lang - --- ', deviceLang)
+
   const [servicesArray, setServices] = React.useState([]);
 
   const [filteredServices, setFilteredServices] = React.useState([]);
@@ -31,6 +25,16 @@ export default function Services() {
 
   const serviceTableRef = React.useRef(null);
   React.useEffect(() => {
+
+
+    if (deviceLang === 'mr-IN') {
+      tableName = 'Final Data of Services Marathi';
+    } else if (deviceLang === 'hi-IN') {
+      tableName = 'Final Data of Services Hindi';
+    } else {
+      tableName = 'Final Data of Services English';
+    }
+
     const base = new Airtable({apiKey: 'keyv7fiKaNRuaOKYj'}).base(
       'appPNBYIlqRPXfwEK'
     );
@@ -156,7 +160,7 @@ export default function Services() {
         <Select
           isClearable
           className="districtSelect"
-          placeholder="Select District"
+          placeholder={selectedLanguage.selectDistrict}
           options={districtNamesList}
           onChange={(value) => onSelectDistrict(value)}
         />
@@ -178,7 +182,7 @@ export default function Services() {
           })}
         </div>
       ) : (
-        <h2>Please Select a District</h2>
+      <h2>{selectedLanguage.pleaseSelectDistrict}</h2>
       )}
 
       {selectedService && selectedDistrict && singleServiceArray ? (
@@ -193,10 +197,10 @@ export default function Services() {
               return (
                 <div className="serviceContainer">
                   <h2>{service.Name}</h2>
-                  <h4>Region - {service.Region}</h4>
-                  <h4>Contact - {service.Contact}</h4>
+                  <h4>{selectedLanguage.region} - {service.Region}</h4>
+                  <h4>{selectedLanguage.contact} - {service.Contact}</h4>
                   {service.Comments ? (
-                    <h6>Additional info - {service.Comments}</h6>
+                    <h6> {selectedLanguage.additionalInfo} - {service.Comments}</h6>
                   ) : null}
                   {service.FundDetails ? (
                     <>

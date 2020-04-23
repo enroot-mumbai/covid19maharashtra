@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
 import Row from './row';
+import { selectedLanguage } from '../utils/setLanguage';
 
 function Table(props) {
   const [states, setStates] = useState(props.states);
@@ -131,7 +132,7 @@ function Table(props) {
               onClick={(e) => handleSort(e, props)}
             >
               <div className="heading-content">
-                <abbr title="State">Maharashtra</abbr>
+                <abbr title="State"> { selectedLanguage.MAHARASHTRA } </abbr>
                 <div
                   style={{
                     display:
