@@ -1,71 +1,11 @@
 import React from 'react'
-
+import {selectedLanguage} from './../../utils/setLanguage'
 export default function Services() {
-
-    const forms = [
-        {
-            id:1,
-            title:'Food Related Resources',
-            link:'https://airtable.com/shrUcn5QIilUh1yzA',
-            image:'images/food.svg'
-        },
-        {
-            id:2,
-            title:'Shelter Home Details',
-            link:'https://airtable.com/shrhAiqjg1TP0ughs',
-            image:'images/shelter.svg'
-        },
-        {
-            id:3,
-            title:'Mental Health Organisations',
-            link:'https://airtable.com/shrbqydy98NMBWCNs',
-            image:'images/mental.png'
-        },
-        {
-            id:4,
-            title:'Medical Equipments',
-            link:'https://airtable.com/shrRgJHRLbdv7SQxn',
-            image:'images/medical.svg'
-        },
-        {
-            id:5,
-            title:'Senior Citizens',
-            link:'https://airtable.com/shrQ3qQ3htYCg0EFG',
-            image:'images/senior.svg'
-        },
-        {
-            id:6,
-            title:'Domestic Violence & Child Abuse',
-            link:'https://airtable.com/shrWIakCbuAJCUzMJ',
-            image:'images/violence.svg'
-        },
-        {
-            id:7,
-            title:'Delivery of Essential Services',
-            link:'https://airtable.com/shrrnhVq2AXQaJhBV',
-            image:'images/delivery.svg'
-        },
-        {
-            id:8,
-            title:'Fund Raising',
-            link:'https://airtable.com/shr0zfRZQn2pF9FmJ',
-            image:'images/donation.svg'
-        }
-    ]
-
     return (
         <div className="volunteersContainer">
-            <h1>We need help in collecting information of Govt. services, NGOs, companies, or any individual who is providing a service during the lockdown.</h1>
-            <div className="serviceFormDiv">
-               {forms.map(form => {
-                   return(
-                    <a href={form.link} className="singleForm">
-                            <img src={form.image} />
-                            <h2>{form.title}</h2>
-                    </a>
-                   )
-               })}  
-            </div>
+            <h1> {selectedLanguage.helpNeededMsg} </h1>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfyQYBnEYGnF30_GB6VZ44QV5j26g1K3vqdphu1pWRCYuFy7g/viewform?embedded=true" width="640" height="1508" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            
         </div>
     )
 }

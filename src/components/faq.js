@@ -1,4 +1,5 @@
 import React, { useEffect} from 'react';
+import { selectedLanguage } from '../utils/setLanguage';
 
 function FAQ(props) {
   // const [faq, setFaq] = useState([]);
@@ -13,11 +14,11 @@ function FAQ(props) {
 
 
   const faq = [
-    {id:1,question:'Are you official ?',answer:'No we are volunteer team, this project is just to share some visualizations of the data'},
-    {id:2,question:'Who is your inspiration ?',answer:'Our inspiration is Covid19India team for the visualizations of the Maps which they have created, apart from that we wish to add more resources for all Maharashtrian citizens'},
-    {id:3,question:'What is the purpose of this project ?',answer:'Apart from the patient data we are also building resources of various services and news which are only relevant for Maharashtra. Join the volunteers group to add this data.'},
-    {id:4,question:'Where are you getting patient data from ?',answer:'For now - We are getting data from Covid19India team'},
-    {id:5,question:'Who are you ? ', answer:'We are a group of volunteers from <a href=\"http://enrootmumbai.in/">Enroot Mumbai team.</a>'}
+    {id:1,question: selectedLanguage.faqq1 ,answer:selectedLanguage.faqa1},
+    {id:2,question:selectedLanguage.faqq2,answer:selectedLanguage.faqa2},
+    {id:3,question:selectedLanguage.faqq3,answer:selectedLanguage.faqa3},
+    {id:4,question:selectedLanguage.faqq4,answer:selectedLanguage.faqa4},
+    {id:5,question:selectedLanguage.faqq5, answer:selectedLanguage.faqa5}
   ]
 
 
