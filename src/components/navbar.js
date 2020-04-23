@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Select from 'react-select';
+import useLocalStorage from './../utils/localStorage'
 
 function Navbar(props) {
   // HTML Properties for each of the links in UI
@@ -9,6 +11,15 @@ function Navbar(props) {
       animationDelay: `${animationDelay}s`,
     },
   });
+
+  const [language, setLanguage] = useLocalStorage('language', 'en');
+
+  console.log('Language from LS - ',language)
+  const languageChange = [
+    {"label": "English", "value": "en"},
+    {"label": "हिन्दी", "value": "hi-IN"},
+    {"label": "मराठी", "value": "mr-IN"}
+  ]
 
   if (window.location.pathname !== '/summary') {
     return (
@@ -41,9 +52,17 @@ function Navbar(props) {
               </Link>
             );
           })}
+          <Select
+            className="languageSelect"
+            placeholder={'Select Language'}
+            options={languageChange}
+            onChange={(item) => setLanguage(item.value)}
+          />
         </div>
 
-        <div className="navbar-right"></div>
+        <div className="navbar-right">
+          
+        </div>
       </div>
     );
   } else {
