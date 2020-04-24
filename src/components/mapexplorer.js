@@ -7,7 +7,7 @@ import { selectedLanguage } from '../utils/setLanguage';
 
 const mapMeta = {
   Maharashtra: {
-    name: selectedLanguage.MAHARASHTRA ,
+    name: 'Maharashtra' ,
     geoDataFile: `${MAPS_DIR}/maharashtra.json`,
     mapType: MAP_TYPES.STATE,
     graphObjectName: 'maharashtra_district',
