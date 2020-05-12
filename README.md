@@ -1,4 +1,4 @@
-### Covid 19 Maharashtra
+# Covid 19 Maharashtra
 
 Covid 19 Maharashtra is platform for - 
 1. Sharing the patient data of Maharashtra and its districts
