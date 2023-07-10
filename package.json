@@ -23,7 +23,7 @@
     "react-feather": "^2.0.3",
     "react-i18next": "^11.3.4",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "5.0.1",
     "react-select": "^3.1.0",
     "sass-lint": "^1.13.1",
     "topojson": "^3.0.2"
